@@ -21,10 +21,6 @@ const TaskSchema = new mongoose.Schema(
             enum: ["active", "inactive", "completed"],
             default: "active"
         },
-        //completed:{
-        //    type: Boolean,
-        //    default: false
-        //},
         priority: {
             type: String,
             required: [true , "Please provide the priority of the task"],
@@ -41,6 +37,6 @@ const TaskSchema = new mongoose.Schema(
         timestamps: true
     })
 
-const Task = mongoose.model("Task", TaskSchema);
+const Task = mongoose.model("tasks", TaskSchema);
 
 export default Task;
