@@ -1,6 +1,8 @@
 export const getAllTasks=()=>{
 }
-export const newTask=()=>{
+export const newTask=async (req,res)=>{
+    console.log()
+    res.send("Task created")
 }
 export const updateTask=()=>{
 }
