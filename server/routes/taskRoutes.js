@@ -9,4 +9,5 @@ router.post('/', protect, newTask)
 router.get('/:id', protect, getIndividualTask)
 router.put('/:id', protect,updateTask)
 router.delete('/:id', protect, deleteTask)
+
 export default router
