@@ -23,10 +23,6 @@ const UserSchema = new mongoose.Schema(
             type: String,
             default: "https://www.gravatar.com/avatar/anything?s=200&d=mm"
         },
-        bio:{
-            type: String,
-            default: "I am a new user"
-        },
         role: {
             type: String,
             required: true,
@@ -39,6 +35,6 @@ const UserSchema = new mongoose.Schema(
     {
         timestamps: true
     })
-    const User = mongoose.model("users", TaskSchema);
+    const User = mongoose.model("users", UserSchema);
 
     export default User;
