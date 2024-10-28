@@ -22,7 +22,8 @@ export const useAuthStore = create<AuthStore>((set) => ({
             set({ user: response.data, loading: false });
         } catch (error) {
             localStorage.removeItem('token');
-                set({ user: null, loading: false });            
+            console.log(error);
+            set({ user: null, loading: false });            
     }
     }
 }))

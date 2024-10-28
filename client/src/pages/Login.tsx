@@ -5,15 +5,15 @@ import { API_URL } from "../utils/constants";
 import { useAuthStore } from "../store/authStore";
 
 const Login = () => {
-    const {checkAuth, user} = useAuthStore()
+    const {checkAuth} = useAuthStore()
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        if(user || localStorage.getItem("token")) {
+        if(localStorage.getItem("token")) {
             navigate('/')
         }
-    },[user])
+    },[navigate])
     
     const [error, setError] = useState("")
   const [formData, setFormData] = useState({

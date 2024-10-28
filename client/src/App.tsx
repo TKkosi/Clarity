@@ -3,16 +3,10 @@ import './App.css'
 import DashBoard from './pages/DashBoard'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
-import { useAuthStore } from './store/authStore'
-import { useEffect } from 'react'
 
 function App() {
   // Check if user is logged in on app load and redirect if not
-  const {checkAuth} = useAuthStore()
-  useEffect(() => {
-    checkAuth()
-  }, [])
-
+ 
   return (
    <>
    
@@ -20,7 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={<DashBoard/>}/>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/signup' element={<SignUp/>}/>
+      <Route path='/sign-up' element={<SignUp/>}/>
     </Routes>
    
     </BrowserRouter>
