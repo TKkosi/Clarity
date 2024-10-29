@@ -2,10 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
-import { useAuthStore } from "../store/authStore";
 
 const Login = () => {
-    const {checkAuth} = useAuthStore()
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
 
@@ -30,7 +28,7 @@ const Login = () => {
     try {
         const response = await axios.post(`${API_URL}/user/login`,formData)
         localStorage.setItem("token", response.data.token)
-        checkAuth()
+        navigate('/')
     } catch (error) {
         console.log(error);
         setError("Invalid email or password")

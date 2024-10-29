@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useAuthStore } from "../store/authStore"
-import { useNavigate } from "react-router-dom"
+import { Routes, useNavigate } from "react-router-dom"
 import Sidebar from "../components/Sidebar"
 import Navbar from "../components/Navbar"
 
@@ -18,17 +18,18 @@ const DashBoard = () => {
     },[navigate, checkAuth])
   return (
     loading?<div>I am loading</div>:
-    <div>
+    <div className="flex h-screen overflow-hidden">
+      <div className="w-1/5">
       <Sidebar/>
-      <div className="ml-64">
+      </div>
+      <div className="w-4/5">
         <Navbar/>
         <div>
-          
+          <Routes>
+            {/* <Route path='/' element={<Home/>}/> */}
+          </Routes>
         </div>
       </div>
-
-        <h1>Dashboard Page</h1>
-        <p>Welcome to your dashboard</p>
     </div>
   )
 }
