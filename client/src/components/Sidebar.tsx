@@ -69,13 +69,13 @@ import 'boxicons'
 
 function Sidebar() {
     return (
-        <div className="w-64 h-screen bg-emerald-800 text-white flex flex-col p-5 font-mono">
+        <div className=" h-screen bg-emerald-800 text-white flex flex-col p-5 font-mono">
             <div className="text-2xl font-bold text-gray-200 mb-8">Clarity</div>
             <ul className="flex-grow space-y-4">
                 <li className="flex items-center px-2 py-3 rounded-lg hover:bg-emerald-600">
                     <i className="bx bx-task text-xl mr-3"></i>
                     <span>Tasks</span>
-                    <span className="ml-auto bg-yellow-400 text-green-800 text-xs px-2 py-1 rounded-full">12</span>
+                    <span className="ml-auto bg-yellow-400 text-emerald-800 text-xs px-2 py-1 rounded-full">12</span>
                 </li>
                 <li className="flex items-center px-2 py-3 rounded-lg hover:bg-emerald-600">
                     <i className="bx bx-activity text-xl mr-3"></i>
