@@ -3,6 +3,7 @@ import { useAuthStore } from "../store/authStore"
 import { Routes, useNavigate } from "react-router-dom"
 import Sidebar from "../components/Sidebar"
 import Navbar from "../components/Navbar"
+import TaskCard from "../components/TaskCard"
 
 const DashBoard = () => {
     const navigate = useNavigate()
@@ -25,6 +26,7 @@ const DashBoard = () => {
       <div className="w-4/5">
         <Navbar/>
         <div>
+          <TaskCard/>
           <Routes>
             {/* <Route path='/' element={<Home/>}/> */}
           </Routes>
