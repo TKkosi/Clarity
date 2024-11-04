@@ -36,8 +36,6 @@ const SignUp = () => {
         console.log(error);
         
     }
-    // submit form to server
-    console.log(formData)
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen dark">

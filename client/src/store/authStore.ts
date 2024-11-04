@@ -12,7 +12,7 @@ interface AuthStore {
 
 export const useAuthStore = create<AuthStore>((set) => ({
     user: null,
-    loading: true,
+    loading: false,
     error: null,
     
     checkAuth: async () => {

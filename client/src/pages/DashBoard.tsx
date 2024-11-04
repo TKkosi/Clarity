@@ -1,9 +1,12 @@
 import { useEffect } from "react"
 import { useAuthStore } from "../store/authStore"
-import { Routes, useNavigate } from "react-router-dom"
+import { Route, Routes, useNavigate } from "react-router-dom"
 import Sidebar from "../components/Sidebar"
 import Navbar from "../components/Navbar"
-import TaskCard from "../components/TaskCard"
+import Notes from "./dashboardPages/Notes"
+import Tasks from "./dashboardPages/Tasks"
+import Teams from "./dashboardPages/Teams"
+import Activities from "./dashboardPages/Activities"
 
 const DashBoard = () => {
     const navigate = useNavigate()
@@ -16,7 +19,7 @@ const DashBoard = () => {
         checkAuth()
 
 
-    },[navigate, checkAuth])
+    },[])
   return (
     loading?<div>I am loading</div>:
     <div className="flex h-screen overflow-hidden">
@@ -26,9 +29,11 @@ const DashBoard = () => {
       <div className="w-4/5">
         <Navbar/>
         <div>
-          <TaskCard/>
           <Routes>
-            {/* <Route path='/' element={<Home/>}/> */}
+            <Route path='/' element={<Tasks/>}/>
+            <Route path='/notes' element={<Notes/>}/>
+            <Route path='/activities' element={<Activities/>}/>
+            <Route path='/teams' element={<Teams/>}/>
           </Routes>
         </div>
       </div>

@@ -1,29 +1,46 @@
 
-const Form = () => {
-  return (
-    <form className="bg-white border-emerald-600 w-[90vw] md:w-[50vw] p-6 rounded-lg shadow-md font-mono">
-      <div className="mb-4">
-        <label htmlFor="title" className="block text-gray-700 text-sm font-bold mb-2">
-          Title
-        </label>
-        <input placeholder="Enter title" type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
-            Description
-        </label>
-        <input placeholder="Enter description" type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-        <label htmlFor="content" className="block text-gray-700 text-sm font-bold mb-2">
-          Content
-        </label>
-        <textarea rows={5} placeholder="Enter your content" id="content" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" defaultValue={""} />
-      </div>
-      <div className="flex items-center justify-between">
-        <button type="submit" className="bg-emerald-800 text-sm hover:bg-emerald-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Post</button>
-      </div>
-    </form>
-  );
+// const TaskCard = () => {
+//     return (
+//         <div>
+//             <div className="card border-2 border-emerald-800">
+//                 <div className="card-header">
+//                     Task Name
+//                 </div>
+//                 <div className="card-body">
+//                     <p className="card-text">Task Description</p>
+//                     <p className="card-text">Task Due Date</p>
+//                     <p className="card-text">Task Status</p>
+//                     <button className="btn btn-primary">Edit</button>
+//                     <button className="btn btn-danger">Delete</button>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
+
+// export default TaskCard;
+
+
+function TaskCard() {
+    return (
+        <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 max-w-sm font-mono">
+            <div className="flex space-x-2 mb-3">
+                <span className="px-2 py-1 bg-pink-100 text-pink-600 text-xs font-semibold rounded-full">inactive</span>
+            </div>
+            <h3 className="text-lg font-semibold text-black">task title</h3>
+            <p className="text-sm text-gray-500 mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus adipisci eligendi minima tempora eum ex beatae, cupiditate inventore omnis distinctio fuga a, explicabo quibusdam. Voluptatem accusamus suscipit expedita sapiente mollitia.</p>
+            <div>
+                <div>
+                    <p className="text-xs text-gray-400 mt-2">Due Date: 12/12/2021</p>
+                    <p className="text-xs text-gray-400 mt-2">Status: Inactive</p>  
+                </div>
+                <div className="p-2 flex flex-col ">
+                    <button className="bg-emerald-800 text-white font-semibold px-2 py-1 rounded-md mt-2">Edit</button>
+                    <button className="bg-red-500 text-white font-semibold px-2 py-1 rounded-md mt-2">Delete</button>
+                </div>
+            </div>
+        </div>
+    );
 }
 
-export default Form;
-
+export default TaskCard;
