@@ -38,7 +38,7 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen dark">
+    <div className="flex flex-col items-center justify-center h-screen dark bg-emerald-300">
         {
             showSuccess && (
                 <div className="absolute w-screen h-screen flex justify-center items-center bg-slate-600">
@@ -50,13 +50,13 @@ const SignUp = () => {
                 </div>
             )
         }
-      <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+      <div className="w-full max-w-md bg-emerald-950 rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-gray-200 mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit} className="flex flex-col">
           <div className="flex space-x-4 mb-4">
             <input
               placeholder="First Name"
-              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              className="bg-emerald-700 text-black border-0 rounded-md p-2 w-1/2 focus:bg-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-200 transition ease-in-out duration-150"
               type="text"
               value={formData.firstName}
               name="firstName"
@@ -64,7 +64,7 @@ const SignUp = () => {
             />
             <input
               placeholder="Last Name"
-              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              className="bg-emerald-700 text-black border-0 rounded-md p-2 w-1/2 focus:bg-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-200 transition ease-in-out duration-150"
               type="text"
               value={formData.lastName}
               name="lastName"
@@ -73,7 +73,7 @@ const SignUp = () => {
           </div>
           <input
             placeholder="Email"
-            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+            className="bg-emerald-700 text-black border-0 rounded-md p-2 mb-4 focus:bg-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-200 transition ease-in-out duration-150"
             type="email"
             value={formData.email}
             name="email"
@@ -81,7 +81,7 @@ const SignUp = () => {
           />
           <input
             placeholder="Password"
-            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+            className="bg-emerald-700 text-black border-0 rounded-md p-2 mb-4 focus:bg-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-200 transition ease-in-out duration-150"
             type="password"
             value={formData.password}
             name="password"
@@ -89,7 +89,7 @@ const SignUp = () => {
           />
           <input
             placeholder="Confirm Password"
-            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+            className="bg-emerald-700 text-black border-0 rounded-md p-2 mb-4 focus:bg-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-200 transition ease-in-out duration-150"
             type="password"
             value={confirmPassword} 
             name="confirmPassword"

@@ -4,6 +4,8 @@ import cors from 'cors'
 import connectDB from "./data/db.js";
 import taskRoutes from "./routes/taskRoutes.js";
 import userRoutes from "./routes/UserRoutes.js";
+import noteRoutes from "./routes/notesRoutes.js";
+import activitiesRoutes from "./routes/activitiesRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -17,6 +19,8 @@ app.use(cors({
 
 app.use("/api/tasks", taskRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/notes", noteRoutes);
+app.use("/api/activities", activitiesRoutes);
 
 app.get('/', (req, res) => {
     res.send("Hello World");

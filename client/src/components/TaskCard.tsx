@@ -32,12 +32,14 @@ const TaskCard = ({
     priority = "low",
 }) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md border-2 border-emerald-800 max-w-sm font-mono">
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <p>Due Date: {dueDate}</p>
-        <p>Status: {status}</p>
-        <p>Priority: {priority}</p>
+    <div className="bg-white p-4 mx-5 rounded-lg shadow-md border-2 border-emerald-800 max-w-sm font-mono">
+        <h3 className="text-lg font-semibold text-black">{title}</h3>
+        <p className="text-sm text-gray-500 mt-1">{description}</p>
+        <div className="flex gap-3">
+            <p className="text-xs text-gray-400 mt-2">Due Date: {dueDate}</p>
+            <p className="text-xs text-gray-400 mt-2">Status: {status}</p>
+            <p className="text-xs text-gray-400 mt-2">Priority: {priority}</p>
+        </div>
         <div className="p-2 flex flex-col ">
             <button className="bg-emerald-800 text-white font-semibold px-2 py-1 rounded-md mt-2">Edit</button>                 
             <button className="bg-red-500 text-white font-semibold px-2 py-1 rounded-md mt-2">Delete</button>

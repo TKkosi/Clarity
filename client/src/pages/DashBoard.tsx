@@ -10,7 +10,7 @@ import Activities from "./dashboardPages/Activities"
 
 const DashBoard = () => {
     const navigate = useNavigate()
-    const {checkAuth, loading} = useAuthStore()
+    const {checkAuth, loading, user} = useAuthStore()
 
     useEffect(() => {
         if(!localStorage.getItem("token")) {
@@ -31,7 +31,7 @@ const DashBoard = () => {
         <div>
           <Routes>
             <Route path='/' element={<Tasks/>}/>
-            <Route path='/notes' element={<Notes/>}/>
+            <Route path='/notes' element={<Notes userId={user?._id}/>}/>
             <Route path='/activities' element={<Activities/>}/>
             <Route path='/teams' element={<Teams/>}/>
           </Routes>

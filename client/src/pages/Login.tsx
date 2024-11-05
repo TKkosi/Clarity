@@ -38,16 +38,16 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen dark">
+    <div className="flex flex-col items-center justify-center h-screen dark font-mono bg-emerald-300">
         {loading && <div className="w-screen h-screen bg-red-800 absolute">
             i am loading
             </div>}
-      <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+      <div className="w-full max-w-md bg-emerald-950 rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-gray-200 mb-4">Sign in</h2>
         <form onSubmit={handleSubmit} className="flex flex-col">
           <input
             placeholder="Email"
-            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+            className="bg-emerald-700 text-black border-0 rounded-md p-2 mb-4 focus:bg-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-200 transition ease-in-out duration-150"
             type="email"
             value={formData.email}
             name="email"
@@ -55,7 +55,7 @@ const Login = () => {
           />
           <input
             placeholder="Password"
-            className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+            className="bg-emerald-700 text-black border-0 rounded-md p-2 mb-4 focus:bg-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-200 transition ease-in-out duration-150"
             type="password"
             value={formData.password}
             name="password"
