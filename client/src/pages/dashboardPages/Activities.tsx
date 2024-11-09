@@ -19,15 +19,6 @@ const Activities = () => {
         };
         fetchActivities();
       }, []);
-  // Sample activity data
-//   const [activities] = useState([
-//     { id: 1, description: 'Created a new task', timestamp: 'Today, 10:00 AM' },
-//     { id: 2, description: 'Updated task "Design Review"', timestamp: 'Yesterday, 4:45 PM' },
-//     { id: 3, description: 'Completed task "Prepare Report"', timestamp: 'Yesterday, 11:30 AM' },
-//     { id: 4, description: 'Assigned task "Team Meeting" to John', timestamp: '2 days ago, 3:00 PM' },
-//     // Add more activities as needed
-//   ]);
-
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md mx-auto border-2 border-emerald-800 font-mono">
       <h2 className="text-xl font-semibold mb-4">Recent Activities</h2>

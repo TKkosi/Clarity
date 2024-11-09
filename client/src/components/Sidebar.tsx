@@ -36,8 +36,8 @@ const navigate = useNavigate()
                 <li className="flex items-center gap-3 pt-4">
                     <img src="https://via.placeholder.com/30" alt="Profile" className="w-8 h-8 rounded-full" />
                     <div>
-                        <p className="text-sm font-semibold text-gray-200">Andrew Simon</p>
-                        <p className="text-xs text-gray-400">andrew@example.com</p>
+                        <p className="text-sm font-semibold text-white">Andrew Simon</p>
+                        <p className="text-xs text-white">andrew@example.com</p>
                     </div>
                 </li>
             </ul>
