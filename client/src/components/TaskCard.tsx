@@ -24,19 +24,27 @@
 // export default TaskCard;
 
 
-const TaskCard = ({
-    title = "Task Title", 
-    description = "Task Description", 
-    dueDate = "12/12/2021", 
-    status = "active",
-    priority = "low",
-}) => {
+// const TaskCard = ({
+//     title = "Task Title", 
+//     description = "Task Description", 
+//     dueDate = "12/12/2021", 
+//     status = "active",
+//     priority = "low",
+// }) => {
+interface TaskCardProps {
+    title: string;
+    description: string;
+    dueDate: Date ;
+    status: string;
+    priority: string;
+}
+function TaskCard({ title,description,dueDate,status,priority }:TaskCardProps) {
   return (
     <div className="bg-white p-4 mx-5 rounded-lg shadow-md border-2 border-emerald-800 max-w-sm font-mono">
         <h3 className="text-lg font-semibold text-black">{title}</h3>
         <p className="text-sm text-gray-500 mt-1">{description}</p>
         <div className="flex gap-3">
-            <p className="text-xs text-gray-400 mt-2">Due Date: {dueDate}</p>
+            <p className="text-xs text-gray-400 mt-2">Due Date: {dueDate.toDateString()}</p>
             <p className="text-xs text-gray-400 mt-2">Status: {status}</p>
             <p className="text-xs text-gray-400 mt-2">Priority: {priority}</p>
         </div>
