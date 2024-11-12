@@ -64,12 +64,13 @@ function Notes({ userId }: NotesProps) {
     <div className="container mx-auto p-4 flex flex-col font-mono">
       <div className='flex items-center justify-between'>
       <h1 className="text-2xl font-bold mb-4">Notes</h1>
-      <button onClick={()=>setShowAddNotes(!showAddNotes)} className="px-4 py-2 bg-emerald-800 text-white rounded-lg font-medium hover:bg-emerald-500 transition">Add Note</button>
+      <button onClick={()=>setShowAddNotes(!showAddNotes)} className="px-4 py-2 bg-emerald-800 text-white rounded-lg font-medium hover:bg-emerald-500 transition">{showAddNotes?"X  ":"Add Note"}</button>
       </div>
    
   {   showAddNotes &&
       //Note Form
-      <form onSubmit={handleSubmit} className="bg-gray-100 p-4 rounded-lg mb-6 shadow-md">
+      <div>
+      <form onSubmit={handleSubmit} className="absolute w-full bg-gray-100 p-4 rounded-lg mb-6 shadow-md">
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold">Title</label>
           <input
@@ -101,9 +102,11 @@ function Notes({ userId }: NotesProps) {
           Add Note
         </button>
       </form>
+      </div>
+
 }
       {/* Display Notes */}
-    <div className=' overflow-scroll h-[100px]'>
+    <div className=' overflow-scroll h-full'>
         {notes && notes.map((note) => (
           <NoteCard key={note._id} title={note.title} content={note.content} date={note.date} />
         ))}

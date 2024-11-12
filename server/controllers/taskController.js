@@ -1,8 +1,9 @@
 import Task from "../models/taskModel.js";
+import activityTracker from "../utils/activityTracker.js";
 
-export const getAllTasks = async() => {
+export const getAllTasks = async( req,res) => {
     const allTasks = await Task.find({user:req.user._id});
-    res.status(200).json({allTasks});
+    res.status(200).json(allTasks);
 };
 
 export const newTask = async (req, res) => {
@@ -11,7 +12,7 @@ export const newTask = async (req, res) => {
     if (!title) {
         return res.status(400).json({ message: "Title is required" });
     }
-    const newTask = Task.create({
+    const newTask = await Task.create({
         title,
         description,
         dueDate,
@@ -21,6 +22,8 @@ export const newTask = async (req, res) => {
     });
 
     console.log(newTask);
+    activityTracker(`created task "${newTask.title}"`, new Date(), req.user._id);
+
     res.status(201).json({message:"Task created"});
     } catch (error) {
     res.status(500).json({ message: error.message });

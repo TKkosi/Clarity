@@ -44,7 +44,7 @@ function TaskCard({ title,description,dueDate,status,priority }:TaskCardProps) {
         <h3 className="text-lg font-semibold text-black">{title}</h3>
         <p className="text-sm text-gray-500 mt-1">{description}</p>
         <div className="flex gap-3">
-            <p className="text-xs text-gray-400 mt-2">Due Date: {dueDate.toDateString()}</p>
+            <p className="text-xs text-gray-400 mt-2">Due Date: {dueDate}</p>
             <p className="text-xs text-gray-400 mt-2">Status: {status}</p>
             <p className="text-xs text-gray-400 mt-2">Priority: {priority}</p>
         </div>

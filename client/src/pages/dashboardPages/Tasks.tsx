@@ -1,29 +1,75 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import TaskCard from "../../components/TaskCard"
 import api from "../../utils/api"
 
 const Tasks = () => {
+  interface Task {
+    _id: string;
+    title: string;
+    description: string;
+    dueDate: Date;
+    status: string;
+    priority: string;
+  }
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [newTask, setNewTask] = useState({
+    title: '',
+    description: '',
+    priority: '',
+    dueDate: new Date(),
+  });
+
+   // Handle form input change
+   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setNewTask({
+      ...newTask,
+      [name]: value,
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    if (!newTask.title || !newTask.description || !newTask.priority) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    try {
+      const response = await api.post('/tasks', newTask);
+      setTasks([...tasks, response.data]);
+      setNewTask({ title: '', description: '', priority: '', dueDate: new Date()});
+    } catch (error) {
+      console.error('Error adding Task:', error);
+    }
+  };
+
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await api.get(`/notes`);
+        const response = await api.get(`/tasks`);
+        console.log(response.data);        
         setTasks(response.data);
       } catch (error) {
         console.error('Error fetching tasks:', error);
       }
     };
     fetchTasks();
-  }, []);
+  },[]);
+
+  
 
   return (
     <div className="p-2 ">
-      <form action="" className="font-mono p-3 border-2 border-emerald-800 rounded-xl">
+      <form onSubmit={handleSubmit} className="font-mono p-3 border-2 border-emerald-800 rounded-xl">
       <div className="mb-4">
           <label className="block text-gray-700 font-semibold">Task</label>
           <input
             type="text"
             name="title" 
-            className="mt-2 p-2 w-full border rounded-lg" 
+            className="mt-2 p-2 w-full border rounded-lg"
+            onChange={handleInputChange} 
             placeholder="Task title"
             />
         </div>
@@ -34,6 +80,7 @@ const Tasks = () => {
             className="mt-2 p-2 w-full border rounded-lg"
             placeholder="Task description"
             rows={4}
+            onChange={handleInputChange} 
           />
         </div>
         <div>
@@ -41,6 +88,7 @@ const Tasks = () => {
           <select
             name="priority"
             className="mt-2 p-2 w-full border rounded-lg"
+            onChange={handleInputChange} 
           >
             <option value="high">High</option>
             <option value="medium">Medium</option>
@@ -53,13 +101,27 @@ const Tasks = () => {
             submit
         </button>
       </form>
-        <TaskCard 
+
+      {
+        tasks &&  
+        tasks.map((task, index) => (
+          <TaskCard 
+            key={index} 
+            title={task.title} 
+            description={task.description} 
+            dueDate={task.dueDate} 
+            status={task.status} 
+            priority={task.priority} 
+          />
+        ))
+      }
+        {/* <TaskCard 
           title="Sample Task" 
           description="This is a sample task description." 
           dueDate={new Date()} 
           status="pending" 
           priority="high" 
-        />
+        /> */}
     </div>
   )
 }
