@@ -23,10 +23,10 @@ const DashBoard = () => {
   return (
     loading?<div>I am loading</div>:
     <div className="flex h-screen overflow-hidden">
-      <div className="w-1/5">
+      <div className="w-1/5 overflow">
       <Sidebar/>
       </div>
-      <div className="w-4/5">
+      <div className="w-4/5 overflow-auto">
         <Navbar/>
         <div>
           <Routes>

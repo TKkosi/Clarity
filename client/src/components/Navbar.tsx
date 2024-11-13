@@ -18,7 +18,7 @@ function Navbar() {
     }
     return (
         <section>
-        <div className="flex items-center justify-between bg-gray-100 h-16 px-6 shadow font-mono">
+        <div className="flex items-center justify-between bg-gray-100 h-16 px-6 shadow font-mono border-b-2 border-emerald-800">
             <div>
                 <p className="text-sm text-gray-500">Welcome,</p>
                 <p className="text-lg font-semibold text-gray-800">Andrew Simon</p>

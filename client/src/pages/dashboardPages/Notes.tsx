@@ -70,7 +70,7 @@ function Notes({ userId }: NotesProps) {
   {   showAddNotes &&
       //Note Form
       <div>
-      <form onSubmit={handleSubmit} className="absolute w-full bg-gray-100 p-4 rounded-lg mb-6 shadow-md">
+      <form onSubmit={handleSubmit} className="absolute w-[79%] bg-gray-100 p-4 rounded-lg mb-6 shadow-md">
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold">Title</label>
           <input
@@ -106,7 +106,7 @@ function Notes({ userId }: NotesProps) {
 
 }
       {/* Display Notes */}
-    <div className=' overflow-scroll h-full'>
+    <div className=' overflow h-full'>
         {notes && notes.map((note) => (
           <NoteCard key={note._id} title={note.title} content={note.content} date={note.date} />
         ))}
