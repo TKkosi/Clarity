@@ -13,11 +13,11 @@ const SignUp = () => {
   });
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
-   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-   const handleConfirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleConfirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     setConfirmPassword(e.target.value)
     if (e.target.value != formData.password) {
         setError("passwords do not match")

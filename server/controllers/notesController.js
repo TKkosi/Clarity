@@ -25,8 +25,8 @@ export const getIndividualNote = async (req, res) => {
 
 export const newNote = async (req, res) => {
     try {
-        const user = req.user._id;
-        const { title, content } = req.body;
+        const { title, content, teamId } = req.body;
+        const user = teamId?teamId:req.user._id;
         const note = new Note({
             title,
             content,

@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import api from '../../utils/api';
+import Loader from '../../components/Loader';
 
 const Activities = () => {
+    const [loading, setLoading] = useState(false);
     interface Activities {
         _id: string;
         description: string;
@@ -10,17 +12,23 @@ const Activities = () => {
     const [activities, setActivities] = useState<Activities[]>([]);
     useEffect(() => {
         const fetchActivities = async () => {
+          setLoading(true);
           try {
             const response = await api.get(`/activities`);
             setActivities(response.data);
           } catch (error) {
             console.error('Error fetching notes:', error);
           }
+          finally{
+            setLoading(false);
+          }
         };
         fetchActivities();
       }, []);
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md mx-auto border-2 border-emerald-800 font-mono">
+      {loading && <Loader/>}
+      <h2 className="text-2xl font-bold text-emerald-800">Activities</h2>
       <h2 className="text-xl font-semibold mb-4">Recent Activities</h2>
 
       <div className="space-y-4 overflow-y-auto max-h-80">

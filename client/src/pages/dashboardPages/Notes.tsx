@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import NoteCard from '../../components/NoteCard';
 import api from '../../utils/api';
+import Loader from '../../components/Loader';
 
 interface NotesProps {
   userId: string|undefined;
 }
 
 function Notes({ userId }: NotesProps) {
+
   interface Note {
     _id: string;
     title: string;
@@ -16,6 +18,7 @@ function Notes({ userId }: NotesProps) {
 
   const [notes, setNotes] = useState<Note[]>([]);
   const [showAddNotes, setShowAddNotes] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [newNote, setNewNote] = useState({
     title: '',
     content: '',
@@ -24,11 +27,15 @@ function Notes({ userId }: NotesProps) {
   // Fetch notes on component mount
   useEffect(() => {
     const fetchNotes = async () => {
+      setLoading(true);
       try {
         const response = await api.get(`/notes`);
         setNotes(response.data);
       } catch (error) {
         console.error('Error fetching notes:', error);
+      }
+      finally{
+        setLoading(false);
       }
     };
     fetchNotes();
@@ -62,11 +69,12 @@ function Notes({ userId }: NotesProps) {
 
   return (
     <div className="container mx-auto p-4 flex flex-col font-mono">
+      {loading && <Loader/>}
       <div className='flex items-center justify-between'>
       <h1 className="text-2xl font-bold mb-4">Notes</h1>
       <button onClick={()=>setShowAddNotes(!showAddNotes)} className="px-4 py-2 bg-emerald-800 text-white rounded-lg font-medium hover:bg-emerald-500 transition">{showAddNotes?"X  ":"Add Note"}</button>
       </div>
-   
+  
   {   showAddNotes &&
       //Note Form
       <div>

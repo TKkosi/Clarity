@@ -2,15 +2,21 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../utils/constants";
+import Loader from "../components/Loader";
 
 const Login = () => {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+      setLoading(true)
+      try {
         if(localStorage.getItem("token")) {
             navigate('/')
         }
+      } finally {
+        setLoading(false)
+      } 
     },[navigate])
     
     const [error, setError] = useState("")
@@ -39,9 +45,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen dark font-mono bg-emerald-300">
-        {loading && <div className="w-screen h-screen bg-red-800 absolute">
-            i am loading
-            </div>}
+        {loading && <Loader/>}
       <div className="w-full max-w-md bg-emerald-950 rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-gray-200 mb-4">Sign in</h2>
         <form onSubmit={handleSubmit} className="flex flex-col">

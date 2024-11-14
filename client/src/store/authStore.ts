@@ -1,6 +1,7 @@
 import {create} from 'zustand';
 import { API_URL } from '../utils/constants';
 import api from '../utils/api';
+import axios from 'axios';
 
 
 interface AuthStore {
@@ -21,9 +22,11 @@ export const useAuthStore = create<AuthStore>((set) => ({
             const response = await api.get(`${API_URL}/user/getUser`);
             set({ user: response.data, loading: false });
         } catch (error) {
-            localStorage.removeItem('token');
-            console.log(error);
-            set({ user: null, loading: false });            
+            if (axios.isAxiosError(error) && error.response?.status === 401) {   
+                localStorage.removeItem('token');
+                console.log(error);
+                set({ user: null, loading: false });            
+            }
     }
     }
 }))

@@ -7,6 +7,7 @@ import Notes from "./dashboardPages/Notes"
 import Tasks from "./dashboardPages/Tasks"
 import Teams from "./dashboardPages/Teams"
 import Activities from "./dashboardPages/Activities"
+import Loader from "../components/Loader"
 
 const DashBoard = () => {
     const navigate = useNavigate()
@@ -19,9 +20,9 @@ const DashBoard = () => {
         checkAuth()
 
 
-    },[])
+    },[checkAuth, navigate])
   return (
-    loading?<div>I am loading</div>:
+    loading?<Loader/>:
     <div className="flex h-screen overflow-hidden">
       <div className="w-1/5 overflow">
       <Sidebar/>
