@@ -1,7 +1,13 @@
+import TeamMemberCard from "../../components/TeamMemberCard";
+
 
 const Teams = () => {
   return (
-    <div>Teams</div>
+    <div>Teams
+      <TeamMemberCard name="John Doe" role="Developer"/>
+      <TeamMemberCard name="Jane Doe" role="Designer"/>
+      
+    </div>
   )
 }
 
