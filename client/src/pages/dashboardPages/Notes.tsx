@@ -5,9 +5,10 @@ import Loader from '../../components/Loader';
 
 interface NotesProps {
   userId: string|undefined;
+  childPage: (page: string) => void;
 }
 
-function Notes({ userId }: NotesProps) {
+function Notes({ userId, childPage }: NotesProps) {
 
   interface Note {
     _id: string;
@@ -26,6 +27,7 @@ function Notes({ userId }: NotesProps) {
 
   // Fetch notes on component mount
   useEffect(() => {
+    childPage("notes");
     const fetchNotes = async () => {
       setLoading(true);
       try {

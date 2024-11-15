@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import api from '../../utils/api';
 import Loader from '../../components/Loader';
 
-const Activities = () => {
+const Activities: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) => {
     const [loading, setLoading] = useState(false);
     interface Activities {
         _id: string;
@@ -11,6 +11,7 @@ const Activities = () => {
       }
     const [activities, setActivities] = useState<Activities[]>([]);
     useEffect(() => {
+      childPage("activities")
         const fetchActivities = async () => {
           setLoading(true);
           try {

@@ -39,8 +39,6 @@ const Login = () => {
         console.log(error);
         setError("Invalid email or password")
     }
-    // submit form to server
-    console.log(formData)
   };
 
   return (

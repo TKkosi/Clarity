@@ -3,7 +3,7 @@ import TaskCard from "../../components/TaskCard"
 import api from "../../utils/api"
 import Loader from "../../components/Loader";
 
-const Tasks = () => {
+const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) => {
   interface Task {
     _id: string;
     title: string;
@@ -18,7 +18,7 @@ const Tasks = () => {
   const [newTask, setNewTask] = useState({
     title: '',
     description: '',
-    priority: '',
+    priority: 'high',
     dueDate: new Date(),
   });
 
@@ -40,15 +40,15 @@ const Tasks = () => {
     }
 
     try {
-      const response = await api.post('/tasks', newTask);
-      setTasks([...tasks, response.data]);
-      setNewTask({ title: '', description: '', priority: '', dueDate: new Date()});
+      await api.post('/tasks', newTask);
+      window.location.reload();
     } catch (error) {
       console.error('Error adding Task:', error);
     }
   };
 
   useEffect(() => {
+    childPage(""); 
     const fetchTasks = async () => {
       setLoading(true);
       try {

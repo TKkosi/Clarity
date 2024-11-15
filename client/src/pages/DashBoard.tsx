@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useAuthStore } from "../store/authStore"
 import { Route, Routes, useNavigate } from "react-router-dom"
 import Sidebar from "../components/Sidebar"
@@ -12,6 +12,10 @@ import Loader from "../components/Loader"
 const DashBoard = () => {
     const navigate = useNavigate()
     const {checkAuth, loading, user} = useAuthStore()
+    const [currentPage, setCurrentPage] = useState("");
+    const handletopage = (page: string) => {
+      setCurrentPage(page);
+    }
 
     useEffect(() => {
         if(!localStorage.getItem("token")) {
@@ -24,17 +28,17 @@ const DashBoard = () => {
   return (
     loading?<Loader/>:
     <div className="flex h-screen overflow-hidden">
-      <div className="w-1/5 overflow">
-      <Sidebar/>
+      <div className="w-4 absolute max-sm:hover:w-full overflow-x-hidden sm:static sm:w-1/5">
+      <Sidebar currentPage={currentPage}/>
       </div>
       <div className="w-4/5 overflow-auto">
         <Navbar/>
         <div>
           <Routes>
-            <Route path='/' element={<Tasks/>}/>
-            <Route path='/notes' element={<Notes userId={user?._id}/>}/>
-            <Route path='/activities' element={<Activities/>}/>
-            <Route path='/teams' element={<Teams/>}/>
+            <Route path='/'  element={<Tasks childPage={handletopage}/>}/>
+            <Route path='/notes' element={<Notes childPage={handletopage} userId={user?._id}/>}/>
+            <Route path='/activities' element={<Activities childPage={handletopage}/>}/>
+            <Route path='/teams' element={<Teams childPage={handletopage}/>}/>
           </Routes>
         </div>
       </div>

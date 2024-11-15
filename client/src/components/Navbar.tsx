@@ -1,27 +1,18 @@
+import { useAuthStore } from "../store/authStore";
 
 function Navbar() {
+    const {user} = useAuthStore()
     const SignOut = () => {
         localStorage.removeItem("token")
         window.location.href = "/login"
     }
-    interface User {
-        id: number;
-        name: string;
-        email: string;
-        timestamp: string;
-    }
-    const User: User = {
-        id: 1,
-        name: "Andrew Simon",
-        email: "",
-        timestamp: new Date().toLocaleString()
-    }
+   
     return (
         <section>
         <div className="flex items-center justify-between bg-gray-100 h-16 px-6 shadow font-mono border-b-2 border-emerald-800">
             <div>
                 <p className="text-sm text-gray-500">Welcome,</p>
-                <p className="text-lg font-semibold text-gray-800">Andrew Simon</p>
+                <p className="text-lg font-semibold text-gray-800">{user?.name}</p>
             </div>
             <div className="flex items-center w-1/2">
                 <div className="relative w-full">
@@ -36,7 +27,7 @@ function Navbar() {
             <div className="bg-white p-4 rounded-lg shadow-md flex justify-between items-center border-emerald-800 border-2">
                 <div className="flex items-center space-x-4">
                     <div>
-                        <p className="text-sm text-gray-500"> {User.timestamp}</p>
+                        <p className="text-sm text-gray-500"> </p>
                     </div>
                     <div className="border-l border-gray-300 pl-4">
                         <button className="text-black font-medium">Daily Tasks <span className="text-gray-500">▼</span></button>
