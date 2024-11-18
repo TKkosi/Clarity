@@ -8,6 +8,8 @@ import Tasks from "./dashboardPages/Tasks"
 import Teams from "./dashboardPages/Teams"
 import Activities from "./dashboardPages/Activities"
 import Loader from "../components/Loader"
+import Settings from "./dashboardPages/Settings"
+import Support from "./dashboardPages/Support"
 
 const DashBoard = () => {
     const navigate = useNavigate()
@@ -39,6 +41,8 @@ const DashBoard = () => {
             <Route path='/notes' element={<Notes childPage={handletopage} userId={user?._id}/>}/>
             <Route path='/activities' element={<Activities childPage={handletopage}/>}/>
             <Route path='/teams' element={<Teams childPage={handletopage}/>}/>
+            <Route path='/settings' element={<Settings childPage={handletopage}/>}/>
+            <Route path='/support' element={<Support childPage={handletopage}/>}/>
           </Routes>
         </div>
       </div>

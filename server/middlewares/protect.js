@@ -1,4 +1,4 @@
-import user from "../models/UserModel.js"
+import User from "../models/UserModel.js"
 import jwt from "jsonwebtoken";
 
 
@@ -17,7 +17,7 @@ const protect =async(req,res, next)=>{
     try{
         const decoded=jwt.verify(token,process.env.JWT_SECRET);
 
-        const currentUser=await user.findById(decoded.id).select("-password");
+        const currentUser=await User.findById(decoded.id).select("-password");
         if(!currentUser)
         {
             return res.status(401).json({message:"User not found"});
