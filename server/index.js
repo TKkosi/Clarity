@@ -14,7 +14,7 @@ connectDB();
 
 app.use(express.json());
 app.use(cors({
-    origin: "*"
+    origin: ["https://alpha-clarity.vercel.app","http://localhost:5173"],
 }));
 
 app.use("/api/tasks", taskRoutes);

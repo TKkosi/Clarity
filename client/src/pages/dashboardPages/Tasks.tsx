@@ -48,6 +48,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
   };
 
   useEffect(() => {
+    console.log(process.env.NODE_ENV);
     childPage(""); 
     const fetchTasks = async () => {
       setLoading(true);
