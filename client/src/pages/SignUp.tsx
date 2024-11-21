@@ -28,6 +28,7 @@ const SignUp = () => {
   };
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (formData.password.length < 6) return setError("password must be at least 6 characters")
     try {
         await axios.post(`${API_URL}/user/register`, {...formData, name:`${formData.firstName} ${formData.lastName}`})
         setShowSuccess(true)

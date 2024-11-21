@@ -69,9 +69,9 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
   
 
   return (
-    <div className="p-2 ">
+    <div className="p-2 bg-gradient-to-b from-blue-200 to-purple-200 h-full flex flex-col">
       {loading && <Loader/>}
-      <div className='flex items-center justify-between font-mono'>
+      <div className='flex items-center justify-between font-mono min-h-20'>
         <h1 className="text-2xl font-bold mb-4">Tasks</h1>
         <button onClick={() => setShowAddTasks(!showAddTasks)} className="px-4 py-2 bg-emerald-800 text-white rounded-lg font-medium hover:bg-emerald-500 transition">{showAddTasks ? "X  " : "Add Task"}</button>
       </div> 
@@ -129,9 +129,8 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
       </div>
   }
 
-      <div className="min-h-3.5  ">
-      <div className="grid grid-cols-4 gap-4 max-w-7xl">
-      {
+<div className='grid grid-cols-4 gap-4 w-full [&::-webkit-scrollbar]:hidden h-full overflow-y-scroll'>
+{
         tasks &&  
         tasks.map((task, index) => (
           <TaskCard 
@@ -145,7 +144,6 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
           />
         ))
       }
-      </div>
       </div>
     </div>
   )

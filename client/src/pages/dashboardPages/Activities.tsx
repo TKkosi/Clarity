@@ -25,9 +25,11 @@ const Activities: React.FC<{ childPage: (page: string) => void }> = ({ childPage
           }
         };
         fetchActivities();
-      }, []);
+      }, [childPage]);
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md mx-auto border-2 border-emerald-800 font-mono">
+
+    <div className='bg-gradient-to-b from-blue-200 to-purple-200 h-full'>
+    <div className="rounded-lg shadow-lg p-4 w-full max-w-md mx-auto border-2 border-emerald-800 font-mono bg-gradient-to-b from-blue-200 to-purple-200 ">
       {loading && <Loader/>}
       <h2 className="text-2xl font-bold text-emerald-800">Activities</h2>
       <h2 className="text-xl font-semibold mb-4">Recent Activities</h2>
@@ -49,6 +51,7 @@ const Activities: React.FC<{ childPage: (page: string) => void }> = ({ childPage
           <p className="text-gray-500 text-center">No recent activities.</p>
         )}
       </div>
+    </div>
     </div>
   );
 };

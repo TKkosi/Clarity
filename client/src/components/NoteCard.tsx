@@ -50,8 +50,8 @@ function NoteCard({ id, title, content, date }: NoteCardProps) {
   }
   return (
     <div className="bg-white shadow-md rounded-lg p-4 mb-4 font-mono mx-5 border-2 border-emerald-800">
-      <h2 className="text-lg font-semibold">{title}</h2>
-      <p className="text-gray-600 mt-2">{content}</p>
+      <h2 className="text-lg font-semibold line-clamp-1">{title}</h2>
+      <p className="text-gray-600 mt-2 line-clamp-2">{content}</p>
       <p className="text-gray-400 text-sm mt-4">{new Date(date).toDateString()}</p>
       <div className="p-2 flex flex-col ">
             <button className="bg-emerald-800 text-white font-semibold px-2 py-1 rounded-md mt-2" onClick={handleEditClick}>Edit</button>                 

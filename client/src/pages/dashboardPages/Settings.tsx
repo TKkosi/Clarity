@@ -1,63 +1,88 @@
-// import { useEffect } from 'react';
 
-// interface SettingsProps {
+import { useEffect } from "react";
 
-//     childPage: (page: string) => void;
-  
-//   }
-//   const Settings: React.FC<SettingsProps> = ({ childPage }) => {
-//     useEffect(() => {
-//       childPage("settings");
-//     }, [childPage]);
-  
-//     return (
-//       <div>Settings</div>
-//     )
-//   }
+interface SettingsProps {
+    childPage: (page: string) => void;
+}
 
-// // const Settings = () => {
-// //   return (
-// //     <div>Settings</div>
-// //   )
-// // }
+function Settings({ childPage }: SettingsProps) {
+    useEffect(() => {
+        childPage("settings");
+    }, [childPage]);
 
-// export default Settings
-
-
-const CardGrid = () => {
-  const cards = [
-    { title: "Vision", description: "Fill Out How Vision.", text: "Add Text..." },
-    { title: "Why?", description: "Fill Out Why Summary.", text: "This Ambitious Venture Represents A Beacon Of Progress And Potential." },
-    { title: "What?", description: "Fill Out What Summary.", text: "Add Text..." },
-    { title: "How", description: "Fill Out How Summary.", text: "Add Text..." },
-    { title: "Mission", description: "Fill Out Mission Summary.", text: "With A Focus On Sustainability And Renewable Energy, Project 001 Is Determined To Reshape Our Approach To Environmental Challenges." },
-    { title: "Values", description: "Fill Out Values Summary.", text: "Add Text..." },
-    // Add more cards to make it a 4x3 grid
-  ];
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 to-purple-100 p-6">
-      <div className="grid grid-cols-4 gap-4 max-w-7xl">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between"
-          >
-            <div>
-              <h3 className="text-lg font-bold text-gray-800">{card.title}</h3>
-              <p className="text-sm text-gray-500">{card.description}</p>
-              <p className="mt-4 text-sm text-gray-600">{card.text}</p>
+    return (
+        <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-8">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6">Settings</h1>
+        
+        {/* Profile Settings Section */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-700 mb-4">Profile Settings</h2>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <label htmlFor="name" className="text-gray-600">Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="John Doe"
+                className="w-3/4 p-2 border rounded-md focus:ring focus:ring-blue-300"
+              />
             </div>
-            <div className="flex justify-end mt-4">
-              <button className="p-2 bg-blue-500 rounded-full text-white shadow hover:bg-blue-600">
-                ✎
-              </button>
+            <div className="flex items-center justify-between">
+              <label htmlFor="email" className="text-gray-600">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="example@domain.com"
+                className="w-3/4 p-2 border rounded-md focus:ring focus:ring-blue-300"
+              />
             </div>
           </div>
-        ))}
+        </section>
+
+        {/* Notification Preferences Section */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold text-gray-700 mb-4">Notification Preferences</h2>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="text-gray-600">Task Updates</span>
+              <input
+                type="checkbox"
+                className="form-checkbox text-blue-500"
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-gray-600">Email Reminders</span>
+              <input
+                type="checkbox"
+                className="form-checkbox text-blue-500"
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-gray-600">Push Notifications</span>
+              <input
+                type="checkbox"
+                className="form-checkbox text-blue-500"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Account Management Section */}
+        <section>
+          <h2 className="text-xl font-semibold text-gray-700 mb-4">Account Management</h2>
+          <div className="space-y-4">
+            <button className="w-full p-2 bg-red-500 text-white rounded-md hover:bg-red-600">
+              Delete Account
+            </button>
+            <button className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+              Change Password
+            </button>
+          </div>
+        </section>
       </div>
     </div>
-  );
-};
+    )
+}
 
-export default CardGrid;
+export default Settings;

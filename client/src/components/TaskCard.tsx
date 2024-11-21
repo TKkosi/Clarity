@@ -53,8 +53,8 @@ function TaskCard({id, title,description,dueDate,status,priority }:TaskCardProps
 
   return (
     <div className="bg-white p-4 mx-5 rounded-lg shadow-md border-2 border-emerald-800 max-w-sm font-mono">
-        <h3 className="text-lg font-semibold text-black">{title}</h3>
-        <p className="text-sm text-gray-500 mt-1">{description}</p>
+        <h3 className="text-lg font-semibold text-black line-clamp-1">{title}</h3>
+        <p className="text-sm text-gray-500 mt-1 line-clamp-1">{description}</p>
         <div className="flex gap-3">
             <p className="text-xs text-gray-400 mt-2">Due Date: {dueDate.getDate()} {dueDate.getMonth()} {dueDate.getFullYear()}</p>
             <p className="text-xs text-gray-400 mt-2">Status: {status}</p>

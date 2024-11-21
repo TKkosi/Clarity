@@ -70,9 +70,9 @@ function Notes({ userId, childPage }: NotesProps) {
   };
 
   return (
-    <div className="container mx-auto p-4 flex flex-col font-mono">
+    <div className="container mx-auto p-4 flex flex-col font-mono bg-gradient-to-b from-blue-200 to-purple-200 h-full">
       {loading && <Loader/>}
-      <div className='flex items-center justify-between'>
+      <div className='flex items-center justify-between min-h-20'>
       <h1 className="text-2xl font-bold mb-4">Notes</h1>
       <button onClick={()=>setShowAddNotes(!showAddNotes)} className="px-4 py-2 bg-emerald-800 text-white rounded-lg font-medium hover:bg-emerald-500 transition">{showAddNotes?"X  ":"Add Note"}</button>
       </div>
@@ -116,7 +116,7 @@ function Notes({ userId, childPage }: NotesProps) {
 
 }
       {/* Display Notes */}
-    <div className='grid grid-cols-4 gap-4 max-w-7xl'>
+    <div className='grid grid-cols-4 gap-4 w-full [&::-webkit-scrollbar]:hidden h-full overflow-y-scroll'>
         {notes && notes.map((note) => (
           <NoteCard key={note._id} id={note._id} title={note.title} content={note.content} date={note.date} />
         ))}
