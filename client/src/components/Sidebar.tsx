@@ -14,7 +14,7 @@ function Sidebar({ currentPage }: SidebarProps) {
             <div className="text-2xl font-bold text-gray-200 mb-8">Clarity</div>
             <ul className="flex-grow space-y-4">
                 <li onClick={()=>navigate('/')} className={`flex items-center px-2 py-3 rounded-lg ${currentPage==="" && "bg-emerald-600"} hover:bg-emerald-600`}>
-                    <i className="bx bx-task text-xl mr-3"></i>
+                    <i className="bx bx-grid-alt text-xl mr-3"></i>
                     <span>Tasks</span>
                     <span className="ml-auto bg-yellow-400 text-emerald-800 text-xs px-2 py-1 rounded-full">12</span>
                 </li>
@@ -32,16 +32,13 @@ function Sidebar({ currentPage }: SidebarProps) {
                 </li>
             </ul>
             <ul className="space-y-4 border-t border-emerald-700 pt-4">
-                <li className="flex items-center px-2 py-3 rounded-lg hover:bg-emerald-600">
-                    <i className="bx bx-cog text-xl mr-3"></i>
+                <li onClick={()=>navigate('/settings')} className="flex items-center px-2 py-3 rounded-lg hover:bg-emerald-600">
                     <span>Settings</span>
                 </li>
-                <li className="flex items-center px-2 py-3 rounded-lg hover:bg-emerald-600">
-                    <i className="bx bx-support text-xl mr-3"></i>
+                <li onClick={()=>navigate('/support')} className="flex items-center px-2 py-3 rounded-lg hover:bg-emerald-600">
                     <span>Support</span>
                 </li>
                 <li className="flex items-center gap-3 pt-4">
-                    <img src="https://via.placeholder.com/30" alt="Profile" className="w-8 h-8 rounded-full" />
                     <div>
                         <p className="text-sm font-semibold text-white">{user?.name}</p>
                         <p className="text-xs text-white">{user?.email}</p>

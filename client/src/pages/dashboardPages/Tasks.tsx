@@ -64,7 +64,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
         }
     };
     fetchTasks();
-  },[]);
+  }, [childPage]);
 
   
 
@@ -129,7 +129,8 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
       </div>
   }
 
-      <div className="flex flex-row flex-wrap gap-4">
+      <div className="min-h-3.5  ">
+      <div className="grid grid-cols-4 gap-4 max-w-7xl">
       {
         tasks &&  
         tasks.map((task, index) => (
@@ -144,6 +145,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
           />
         ))
       }
+      </div>
       </div>
     </div>
   )

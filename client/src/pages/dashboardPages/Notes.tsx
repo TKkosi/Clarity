@@ -41,7 +41,7 @@ function Notes({ userId, childPage }: NotesProps) {
       }
     };
     fetchNotes();
-  }, [userId]);
+  }, [userId, childPage]);
 
   // Handle form input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -116,9 +116,9 @@ function Notes({ userId, childPage }: NotesProps) {
 
 }
       {/* Display Notes */}
-    <div className=' overflow h-full'>
+    <div className='grid grid-cols-4 gap-4 max-w-7xl'>
         {notes && notes.map((note) => (
-          <NoteCard key={note._id} title={note.title} content={note.content} date={note.date} />
+          <NoteCard key={note._id} id={note._id} title={note.title} content={note.content} date={note.date} />
         ))}
       </div>  
     </div>
