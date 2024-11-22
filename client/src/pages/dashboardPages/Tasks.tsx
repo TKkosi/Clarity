@@ -131,7 +131,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
 
 <div className='grid grid-cols-4 gap-4 w-full [&::-webkit-scrollbar]:hidden h-full overflow-y-scroll'>
 {
-        tasks &&  
+        tasks?.length?  
         tasks.map((task, index) => (
           <TaskCard 
           key={index}
@@ -142,7 +142,8 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
           status={task.status} 
           priority={task.priority} 
           />
-        ))
+        )):
+        <div>You do not have any tasks at the moment</div>
       }
       </div>
     </div>
