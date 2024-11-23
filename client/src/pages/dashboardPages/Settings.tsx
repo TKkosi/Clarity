@@ -11,7 +11,7 @@ function Settings({ childPage }: SettingsProps) {
     }, [childPage]);
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6">
+        <div className="min-h-screen bg-gray-100 p-6 bg-gradient-to-b from-blue-200 to-purple-200 ">
       <div className="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-8">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Settings</h1>
         

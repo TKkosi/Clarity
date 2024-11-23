@@ -32,10 +32,10 @@ function Sidebar({ currentPage }: SidebarProps) {
                 </li>
             </ul>
             <ul className="space-y-4 border-t border-emerald-700 pt-4">
-                <li onClick={()=>navigate('/settings')} className="flex items-center px-2 py-3 rounded-lg hover:bg-emerald-600">
+                <li onClick={()=>navigate('/settings')} className={`flex items-center px-2 py-3 rounded-lg ${currentPage==="settings" && "bg-emerald-600"} hover:bg-emerald-600`}>
                     <span>Settings</span>
                 </li>
-                <li onClick={()=>navigate('/support')} className="flex items-center px-2 py-3 rounded-lg hover:bg-emerald-600">
+                <li onClick={()=>navigate('/support')} className={`flex items-center px-2 py-3 rounded-lg ${currentPage==="support" && "bg-emerald-600"} hover:bg-emerald-600`}>
                     <span>Support</span>
                 </li>
                 <li className="flex items-center gap-3 pt-4">

@@ -9,7 +9,7 @@ function SupportPages({ childPage }: SupportProps) {
     }, [childPage]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-200 to-purple-200  p-6">
+        <div className="min-h-screen bg-gradient-to-b from-blue-200 to-purple-200  p-6 font-mono">
             {/* {loading && <Loader />} */}
         {/* Header */}
             <header className="bg-white shadow-md rounded-md p-6 mb-6">
@@ -83,7 +83,7 @@ function SupportPages({ childPage }: SupportProps) {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 rounded-md shadow hover:bg-blue-600"
+              className="w-full bg-emerald-800 text-white py-2 rounded-md shadow hover:bg-emerald-500"
             >
               Send Message
             </button>
