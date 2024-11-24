@@ -39,13 +39,12 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen dark bg-emerald-300">
+    <div className="flex flex-col items-center justify-center h-screen dark bg-emerald-300 font-mono">
         {
             showSuccess && (
                 <div className="absolute w-screen h-screen flex justify-center items-center bg-slate-600">
-
               <div className="text-green-600 text-sm mb-4">
-                <p>Registration successful! Please log in.</p>
+                <p>Registration successful! Please log in. tk</p>
                 <Link to={"/login"} className="p-2 bg-green-500">Login</Link>
               </div>
                 </div>
@@ -99,19 +98,9 @@ const SignUp = () => {
           {error && <p>{error}</p>}
           <p className="text-white mt-4">
             Already have an account?
-            <a
-              className="text-sm text-blue-500 -200 hover:underline mt-4"
-              href="#"
-            >
-              Sign in
-            </a>
+            <Link className="text-sm text-blue-500 -200 hover:underline mt-4" to={"/login"}>Sign in </Link>
           </p>
-          <button
-            className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
-            type="submit"
-          >
-            Sign Up
-          </button>
+          <button className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"type="submit">Sign Up</button>
         </form>
       </div>
     </div>

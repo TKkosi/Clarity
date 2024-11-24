@@ -55,7 +55,7 @@ function SupportPages({ childPage }: SupportProps) {
               <input
                 type="text"
                 id="name"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-emerald-500 border-2 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"
                 placeholder="Enter your name"
               />
             </div>
@@ -66,7 +66,7 @@ function SupportPages({ childPage }: SupportProps) {
               <input
                 type="email"
                 id="email"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 border-emerald-500 border-2"
                 placeholder="Enter your email"
               />
             </div>
@@ -77,7 +77,7 @@ function SupportPages({ childPage }: SupportProps) {
               <textarea
                 id="message"
                 rows={4}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500 border-emerald-500 border-2"
                 placeholder="Enter your message"
               ></textarea>
             </div>
