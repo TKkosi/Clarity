@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import TeamMemberCard from "../../components/TeamMemberCard";
+import NotFound from "../404 page/404pages";
 
 
 const Teams = ({childPage}: {childPage: (page: string) => void}) => {
@@ -8,10 +8,8 @@ const Teams = ({childPage}: {childPage: (page: string) => void}) => {
   }, [childPage]);
   
   return (
-    <div>Teams
-      <TeamMemberCard name="John Doe" role="Developer"/>
-      <TeamMemberCard name="Jane Doe" role="Designer"/>
-      
+    <div>
+      <NotFound/>
     </div>
   )
 }

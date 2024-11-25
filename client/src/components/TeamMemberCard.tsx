@@ -1,5 +1,3 @@
-
-
 interface TeamMemberCardProps {
   name: string;
   role: string;

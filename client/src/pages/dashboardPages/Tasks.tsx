@@ -53,8 +53,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
     const fetchTasks = async () => {
       setLoading(true);
       try {
-        const response = await api.get(`/tasks`);
-        console.log(response.data);        
+        const response = await api.get(`/tasks`);        
         setTasks(response.data);
       } catch (error) {
         console.error('Error fetching tasks:', error);
@@ -143,7 +142,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
           priority={task.priority} 
           />
         )):
-        <div>You do not have any tasks at the moment</div>
+        <p className="text-gray-600 text-center col-span-4">You do not have any tasks at the moment</p>
       }
       </div>
     </div>

@@ -40,16 +40,22 @@ const SignUp = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen dark bg-emerald-300 font-mono">
-        {
-            showSuccess && (
-                <div className="absolute w-screen h-screen flex justify-center items-center bg-slate-600">
-              <div className="text-green-600 text-sm mb-4">
-                <p>Registration successful! Please log in. tk</p>
-                <Link to={"/login"} className="p-2 bg-green-500">Login</Link>
-              </div>
-                </div>
-            )
-        }
+        {showSuccess && (
+  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+      <p className="text-green-600 text-lg font-semibold mb-4">
+        Registration successful! Please log in.
+      </p>
+      <Link
+        to="/login"
+        className="px-4 py-2 bg-green-500 text-white font-medium rounded-lg shadow hover:bg-green-600 transition"
+      >
+        Login
+      </Link>
+    </div>
+  </div>
+)}
+
       <div className="w-full max-w-md bg-emerald-950 rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-gray-200 mb-4">Sign Up</h2>
         <form onSubmit={handleSubmit} className="flex flex-col">

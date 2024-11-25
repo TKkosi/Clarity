@@ -52,7 +52,8 @@ function TaskCard({id, title,description,dueDate,status,priority }:TaskCardProps
     }
 
   return (
-    <div className="bg-white p-4 mx-5 rounded-lg shadow-md border-2 border-emerald-800 max-w-sm font-mono">
+    <div>
+    <div className="bg-white p-4 mx-5 -mb-2 rounded-2xl shadow-md border-2 border-emerald-800 max-w-sm font-mono">
         <h3 className="text-lg font-semibold text-black line-clamp-1">{title}</h3>
         <p className="text-sm text-gray-500 mt-1 line-clamp-1">{description}</p>
         <div className="flex gap-3">
@@ -130,6 +131,7 @@ function TaskCard({id, title,description,dueDate,status,priority }:TaskCardProps
         </div>
       )}
 
+    </div>
     </div>
   )
 }

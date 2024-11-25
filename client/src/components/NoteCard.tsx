@@ -49,6 +49,7 @@ function NoteCard({ id, title, content, date }: NoteCardProps) {
     setShowEditModal(false);
   }
   return (
+    <div>
     <div className="bg-white shadow-md rounded-lg p-4 mb-4 font-mono mx-5 border-2 border-emerald-800">
       <h2 className="text-lg font-semibold line-clamp-1">{title}</h2>
       <p className="text-gray-600 mt-2 line-clamp-2">{content}</p>
@@ -83,7 +84,7 @@ function NoteCard({ id, title, content, date }: NoteCardProps) {
 {showEditModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 font-mono">
           <div className="bg-white p-6 rounded shadow-md w-80">
-            <h4 className="text-lg font-semibold">Edit Task</h4>
+            <h4 className="text-lg font-semibold">Edit Notes</h4>
             
             <label className="block mt-2">
               <span className="text-gray-700">Title</span>
@@ -122,6 +123,7 @@ function NoteCard({ id, title, content, date }: NoteCardProps) {
         </div>
       )}
     </div> 
+    </div>
   );
 }
 
