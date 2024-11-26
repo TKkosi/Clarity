@@ -16,7 +16,8 @@ function NoteCard({ id, title, content, date }: NoteCardProps) {
   const handleConfirmDelete = async() => {
     try {
       await api.delete(`/notes/${id}`);
-      console.log("deleted task");
+      console.log("deleted notes");
+      window.location.reload();
       
     } catch (error) {
       console.log(error);
@@ -42,7 +43,7 @@ function NoteCard({ id, title, content, date }: NoteCardProps) {
         description: editedContent
       });
       console.log("edited notes");
-      
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }

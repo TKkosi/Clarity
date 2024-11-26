@@ -10,6 +10,7 @@ import Activities from "./dashboardPages/Activities"
 import Loader from "../components/Loader"
 import Settings from "./dashboardPages/Settings"
 import Support from "./dashboardPages/Support"
+import NotFound from "./404 page/404pages"
 
 const DashBoard = () => {
     const navigate = useNavigate()
@@ -43,6 +44,7 @@ const DashBoard = () => {
             <Route path='/teams' element={<Teams childPage={handletopage}/>}/>
             <Route path='/settings' element={<Settings childPage={handletopage}/>}/>
             <Route path='/support' element={<Support childPage={handletopage}/>}/>
+            <Route path='*' element={<NotFound/>}/>
           </Routes>
         </div>
       </div>

@@ -19,6 +19,7 @@ function TaskCard({id, title,description,dueDate,status,priority }:TaskCardProps
       try {
         await api.delete(`/tasks/${id}`);
         console.log("deleted task");
+        window.location.reload();
         
       } catch (error) {
         console.log(error);
@@ -44,7 +45,7 @@ function TaskCard({id, title,description,dueDate,status,priority }:TaskCardProps
           description: editedDescription
         });
         console.log("edited task");
-        
+        window.location.reload();
       } catch (error) {
         console.log(error);
       }
