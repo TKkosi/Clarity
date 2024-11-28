@@ -36,7 +36,7 @@ const DashBoard = () => {
       </div>
       <div className="w-4/5 overflow-auto">
         <Navbar/>
-        <div className="h-[calc(100vh-64px)] overflow-hidden">
+        <div className="h-[calc(100vh-64px)] overflow-hidden ">
           <Routes>
             <Route path='/'  element={<Tasks childPage={handletopage}/>}/>
             <Route path='/notes' element={<Notes childPage={handletopage} userId={user?._id}/>}/>

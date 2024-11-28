@@ -17,6 +17,8 @@ function NoteCard({ id, title, content, date }: NoteCardProps) {
 
   // DELETE HANDLER
   const handleConfirmDelete = async () => {
+    console.log(id);
+    
     try {
       await api.delete(`/notes/${id}`);
       console.log("Note deleted successfully");
@@ -48,7 +50,7 @@ function NoteCard({ id, title, content, date }: NoteCardProps) {
       {/* Note Card */}
       <div onClick={() => setShowNoteModal(true)} className="cursor-pointer">
         <h2 className="text-lg font-semibold line-clamp-1">{title}</h2>
-        <p className="text-gray-600 mt-2 line-clamp-2">{content}</p>
+        <p className="text-gray-600 mt-2 line-clamp-1">{content}</p>
         <p className="text-gray-400 text-sm mt-4">{new Date(date).toDateString()}</p>
       </div>
 
