@@ -117,14 +117,14 @@ function Notes({ userId, childPage }: NotesProps) {
 
 }
       {/* Display Notes */}
-    <div className='grid grid-cols-4 gap-4 w-full [&::-webkit-scrollbar]:hidden h-full overflow-y-scroll'>
+    <div className='grid grid-cols-4 gap-2 w-full [&::-webkit-scrollbar]:hidden h-full overflow-y-scroll'>
         {notes?.length?
         notes.map((note) => (
           <NoteCard key={note._id} id={note._id} title={note.title} content={note.content} date={note.date} />
         ))
       : <p className="text-gray-600 text-center col-span-4">No notes found</p>
       }
-      </div>  
+      </div> 
     </div>
   );
 }
