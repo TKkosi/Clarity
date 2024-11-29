@@ -34,7 +34,7 @@ const DashBoard = () => {
       <div className="w-4 absolute max-sm:hover:w-full overflow-x-hidden sm:static sm:w-1/5">
       <Sidebar currentPage={currentPage}/>
       </div>
-      <div className="w-4/5 overflow-auto">
+      <div className="w-4/5 overflow-auto max-sm:w-full">
         <Navbar/>
         <div className="h-[calc(100vh-64px)] overflow-hidden ">
           <Routes>
