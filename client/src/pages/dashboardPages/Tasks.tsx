@@ -23,7 +23,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
   });
 
    // Handle form input change
-   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setNewTask({
       ...newTask,
@@ -38,7 +38,6 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
       alert('Please fill in all fields');
       return;
     }
-
     try {
       await api.post('/tasks', newTask);
       window.location.reload();
@@ -48,7 +47,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
   };
 
   useEffect(() => {
-    console.log(process.env.NODE_ENV);
+    //console.log(process.env.NODE_ENV);
     childPage(""); 
     const fetchTasks = async () => {
       setLoading(true);

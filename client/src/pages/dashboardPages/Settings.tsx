@@ -11,7 +11,7 @@ function Settings({ childPage }: SettingsProps) {
     }, [childPage]);
 
 return (
-    <div className="min-h-screen bg-gray-100 p-4 md:p-6 font-mono bg-gradient-to-b from-blue-200 to-purple-200 ">
+    <div className="min-h-screen bg-gray-100 p-4 md:p-6 font-mono bg-gradient-to-b from-blue-200 to-purple-200">
         <div className="max-w-5xl mx-auto bg-white shadow-md rounded-lg p-6 md:p-8">
             <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center md:text-left">Settings</h1>
                 {/* Profile Settings Section */}
