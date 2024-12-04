@@ -67,7 +67,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
   
 
   return (
-    <div className="p-2 bg-gradient-to-b from-blue-200 to-purple-200 h-full flex flex-col">
+    <div className="p-4 bg-gradient-to-b from-blue-200 to-purple-200 h-full w-full flex flex-col mx-auto">
       {loading && <Loader/>}
       <div className='flex items-center justify-between font-mono min-h-20'>
         <h1 className="text-2xl font-bold mb-4">Tasks</h1>

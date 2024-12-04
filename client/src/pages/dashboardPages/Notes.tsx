@@ -71,7 +71,7 @@ function Notes({ userId, childPage }: NotesProps) {
   };
 
   return (
-    <div className="container mx-auto p-4 flex flex-col font-mono bg-gradient-to-b from-blue-200 to-purple-200 h-full w-full">
+    <div className="mx-auto p-4 flex flex-col font-mono bg-gradient-to-b from-blue-200 to-purple-200 h-full w-full">
       {loading && <Loader/>}
       <div className='flex items-center justify-between min-h-20'>
       <h1 className="text-2xl font-bold mb-4">Notes</h1>

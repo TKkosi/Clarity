@@ -9,7 +9,7 @@ function SupportPages({ childPage }: SupportProps) {
     }, [childPage]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-blue-200 to-purple-200  p-6 font-mono">
+        <div className="min-h-screen bg-gradient-to-b from-blue-200 to-purple-200  p-6 font-mono overflow-y-scroll">
             {/* {loading && <Loader />} */}
         {/* Header */}
             <header className="bg-white shadow-md rounded-md p-6 mb-6">
@@ -18,9 +18,9 @@ function SupportPages({ childPage }: SupportProps) {
             </header>
 
         {/* Main Content */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-               {/* FAQ Section */}
-                <section className="bg-white shadow-md rounded-md p-6">
+      <div className="grid grid-cols-1 tablet:grid-cols-2  gap-6">
+       {/* FAQ Section */}
+        <section className="bg-white shadow-md rounded-md p-6">
           <h2 className="text-xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
           <div className="space-y-4">
             <div>
