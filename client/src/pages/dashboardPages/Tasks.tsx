@@ -127,7 +127,7 @@ const Tasks: React.FC<{ childPage: (page: string) => void }> = ({ childPage }) =
       </div>
   }
 
-<div className='grid items-start auto-rows-[250px] grid-cols-4 gap-2 w-full [&::-webkit-scrollbar]:hidden h-full overflow-y-scroll'>
+<div className='grid items-start auto-rows-[250px] grid-cols-4 gap-2 w-full [&::-webkit-scrollbar]:hidden h-full overflow-y-scroll '>
 {
         tasks?.length?  
         tasks.map((task, index) => (
